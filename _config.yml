@@ -6,5 +6,12 @@ author:
   email: G00401971@atu.ie
 description: "A website."
 
-# Build settings
-remote_theme: "teothemes/minimal" 
+# Build Settings
+remote_theme: "minimal-mistakes/minimal-mistakes"  # A highly flexible and feature-rich theme
+
+# Plugins
+plugins:
+  - jekyll-remote-theme  # Fetches and applies the remote theme
+  - jekyll-paginate-v2  # Pagination for listing blog posts or items
+  - jekyll-feed  # Automatically generates an RSS feed for your site
+  - jekyll-sitemap  # Automatically generates a sitemap.xml for search engines
