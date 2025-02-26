@@ -7,7 +7,7 @@ author:
 description: "A website."
 
 # Build Settings
-remote_theme: "minimal-mistakes/minimal-mistakes"  # A highly flexible and feature-rich theme
+remote_theme: "mmistakes/minimal-mistakes"   # A highly flexible and feature-rich theme
 
 # Plugins
 plugins:
