@@ -1,13 +1,14 @@
 # Site settings
-title: melgineer's Blog
+title: Olamide's Blog
 
 author:
-  name: Michelle Lynch
-  email: your-email@domain.com
+  name: Olamide Aderogba
+  email: G00401971@atu.ie
 description: "A website."
 
 # Build settings
-remote_theme: jekyll/minima
+remote_theme: "pmarsceill/just-the-docs"
 
 plugins:
-- jekyll-remote-theme
+  - jekyll-remote-theme
+
