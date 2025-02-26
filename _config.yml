@@ -7,4 +7,4 @@ author:
 description: "A website."
 
 # Build settings
-remote_theme: jekyll/minima
+remote_theme: "teothemes/minimal" 
