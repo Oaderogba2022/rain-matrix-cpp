@@ -25,4 +25,4 @@ A bullet list:
 
 You can add an image that has been uploaded to the repository in a /docs/assets/images folder.
 
-<img src="docs/assets/images/1057de84afb011463edd2648dd4df212750a0db3.jpeg" width="100" height="100">
+<img src="docs/assets/images/1057de84afb011463edd2648dd4df212750a0db3.jpeg" width="500" height="500">
