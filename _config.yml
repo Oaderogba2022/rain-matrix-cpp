@@ -1,11 +1,21 @@
 # Site settings
 title: Olamide's Blog
-author:
-  name: Olamide Aderogba
-  email: G00401971@atu.ie
+author: Olamide Aderogba
+email: G00401971@atu.ie
 description: "A website."
+url: "https://yourusername.github.io" # Replace with your actual GitHub Pages URL
+baseurl: "" # Leave empty if at root, or e.g., "/blog" if subdirectory
 
 # Build settings
 remote_theme: pages-themes/midnight@v0.2.0
 plugins:
-  - jekyll-remote-theme
+  - jekyll-remote-theme # Required for remote themes
+  - jekyll-feed         # Optional: Adds an RSS feed
+  - jekyll-seo-tag      # Optional: Improves SEO
+  - jekyll-sitemap      # Optional: Generates a sitemap
+
+# Theme-specific settings (Midnight supports these)
+show_excerpts: true # Show post excerpts on the homepage
+header_pages:       # Optional: Pages to show in the header
+  - about.md
+  - contact.md
