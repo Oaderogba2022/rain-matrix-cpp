@@ -1,6 +1,5 @@
 # Site settings
 title: Olamide's Blog
-
 author:
   name: Olamide Aderogba
   email: G00401971@atu.ie
@@ -8,3 +7,5 @@ description: "A website."
 
 # Build settings
 remote_theme: jekyll/minima
+sass:
+  sass_dir: _sass
