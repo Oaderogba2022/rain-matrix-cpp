@@ -6,4 +6,4 @@ author:
 description: "A blog."
 
 # Build settings
-remote_theme: cotes2020/jekyll-theme-chirpy
+remote_theme: remote_theme: jekyll-theme-primer
