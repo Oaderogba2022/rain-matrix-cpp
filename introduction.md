@@ -3,8 +3,8 @@
 The inspiration for this project is the rhythm games like Piano Tiles and falling keys piano tutorial playthroughs, in which keys or notes fall in a sequential manner. The games provide an entertaining way of learning musical timing and coordination, as well as a visually engaging experience.
 
 <img src="docs/assets/images/sampledrop.png" width="400" height="300">
-<img src="docs/assets/images/sampledrop2.png" width="400" height="300">
-<img src="docs/assets/images/sampledrop3.png" width="400" height="300">
+<img src="docs/assets/images/sampledrop2.jpg" width="400" height="300">
+<img src="docs/assets/images/sampledrop3.jpg" width="400" height="300">
 
 For my project I wanted to achieve a similar appearance but with a Digital Rain effect, drawing inspiration from the Matrix Rain visualisation. By combining cascading symbols and procedural randomness, the goal is to create an engaging console like visual spectacle. Furthermore, for the sake of enhancing the interactive experience, the project has background music playback specifically, the Super Mario Theme—adding a retro and playful element.
 
