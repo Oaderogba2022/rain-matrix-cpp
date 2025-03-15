@@ -9,13 +9,13 @@ The Digital Rain program is a C++ program that replicates the "Matrix" code rain
 
 ## This is a Heading
 
-This is a paragraph. Add an empty line to start a new paragraph.
+Digital Rain is a C++ console program that simulates the famous "Matrix" code rain effect. It features:
 
-Font can be *Italic* or **Bold**.
+- RainDrop & DigitalRain Classes – Manage cascading characters dynamically.
+- Smooth Animation – Refreshes the screen ~30 times per second.
+- Vivid Visuals – Brightly colored characters descend in a mesmerizing pattern.
 
-Code can be highlighted with 'backticks'.
-
-Hyperlinks look like this: [GitHub Help](https://help.github.com/).
+ Click pn the Digital Rain Modern C++ Project Blog for more details!
 
 A bullet list:
 
