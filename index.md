@@ -1,6 +1,5 @@
 ---
 layout: post
-title: A Project in Modern C++
 tags: cpp coding project
 categories: demo
 ---
