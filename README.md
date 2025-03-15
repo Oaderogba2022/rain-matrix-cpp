@@ -26,9 +26,10 @@ A bullet list:
 ## Project Images:
 
 # Image 1:
-<img src="https://raw.githubusercontent.com/melgineer/digital-rain-test-cpp/main/docs/assets/images/DigitalRainDev1.png" width="400" height="300">
+<img src="docs/assets/images/raindropimg.png" width="400" height="300">
 
 # Image 2:
-
+<img src="docs/assets/images/raindropimg2.png" width="400" height="300">
 
 # Image 3:
+<img src="docs/assets/images/raindropimg3.png" width="400" height="300">
