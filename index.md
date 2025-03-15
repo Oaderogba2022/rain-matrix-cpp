@@ -1,5 +1,4 @@
 ---
-layout: post
 tags: cpp coding project
 categories: demo
 ---
