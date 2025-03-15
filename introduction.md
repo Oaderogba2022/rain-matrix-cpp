@@ -4,7 +4,7 @@ The inspiration for this project is the rhythm games like Piano Tiles and fallin
 
 <img src="docs/assets/images/sampledrop.png" width="400" height="300">
 <img src="docs/assets/images/sampledrop2.jpg" width="400" height="300">
-<img src="docs/assets/images/sampledrop3.jpg" width="400" height="300">
+<img src="docs/assets/images/sampledrosp3.jpg" width="400" height="300">
 
 For my project I wanted to achieve a similar appearance but with a Digital Rain effect, drawing inspiration from the Matrix Rain visualisation. By combining cascading symbols and procedural randomness, the goal is to create an engaging console like visual spectacle. Furthermore, for the sake of enhancing the interactive experience, the project has background music playback specifically, the Super Mario Theme—adding a retro and playful element.
 
