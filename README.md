@@ -23,6 +23,12 @@ A bullet list:
 - algorithms
 - iterators
 
-You can add an impage that has been uploaded to the repository in a /docs/assets/images folder.
+## Project Images:
 
+# Image 1:
 <img src="https://raw.githubusercontent.com/melgineer/digital-rain-test-cpp/main/docs/assets/images/DigitalRainDev1.png" width="400" height="300">
+
+# Image 2:
+
+
+# Image 3:
