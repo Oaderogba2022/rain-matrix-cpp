@@ -5,32 +5,16 @@ tags: cpp coding project
 categories: demo
 ---
 
-This is my first paragraph..
+# Table of Contents
 
-# Introduction
+- [Introduction](introduction.md)
+- [Design & Test](design-test.md)
+- [Algorithm](algorithm.md)
+- [Problem-solving](problem-solving.md)
+- [Modern C++ Insight & Reflection](modern-cpp.md)
 
-This is a paragraph. Add an empty line to start a new paragraph.
+# Welcome to the Project Documentation
 
-Font can be *Italic* or **Bold**.
-
-## Design & Test
-
-Code can be highlighted with `backticks`.
-
-## Algorithm
-
-Hyperlinks look like this [GitHub Help](https://help.github.com/).
-
-## Problem-solving
-
-A bullet list:
-
-- vectors
-- algorithms
-- iterators
-
-## Modern C++ Insight & Reflection
-
-You can add an image that has been uploaded to the repository in a /docs/assets/images folder.
+This is the main page of the project documentation.
 
 <img src="docs/assets/images/1057de84afb011463edd2648dd4df212750a0db3.jpeg" width="500" height="500">
