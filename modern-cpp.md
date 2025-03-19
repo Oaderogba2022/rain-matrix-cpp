@@ -1,9 +1,5 @@
-# Modern CPP
-
 # Modern C++ Insight & Reflection  
-
-## Leveraging Modern C++ Features  
-
+ 
 The **Digital Rain** project takes full advantage of **Modern C++ (C++11 and beyond)** to enhance efficiency, readability, and maintainability. Key features utilized include:  
 
 ### 1. Smart Pointers (`std::unique_ptr`, `std::shared_ptr`)  
@@ -24,8 +20,4 @@ Instead of using **C-style `rand()`**, the project uses **Mersenne Twister (`std
 
 ### 4. Range-Based Loops  
 Modern C++ supports **range-based loops**, which improve code readability and reduce the chances of **off-by-one errors**.  
-- **Example Usage:**  
-  ```cpp
-  for (const auto& drop : raindrops) {
-      drop.update();
-  }
+
