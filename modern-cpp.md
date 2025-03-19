@@ -1,4 +1,4 @@
-# Modern C++ Insight & Reflection  
+# Modern C++  
  
 The **Digital Rain** project takes full advantage of **Modern C++ (C++11 and beyond)** to enhance efficiency, readability, and maintainability. Key features utilized include:  
 
