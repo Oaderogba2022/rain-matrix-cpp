@@ -14,7 +14,7 @@ categories: demo
 
 # Welcome to the Project Blog
 
-The Digital Rain program is a C++ program that replicates the Matrix code rain animation on the console. It uses two classes: RainDrop for individual streams of falling characters and DigitalRain to manage the overall animation. The program adds a twist by playing the Super Mario Bros. theme song accompanied by beeps. It runs smoothly, updating the screen around 30 times per second, and shows brightly colored characters descending with music playing in the background. This project integrates coding skill with a cool visual and auditory experience.
+My Digital Rain program is a C++ program that emulates the Matrix code rain animation on the console. It utilizes two classes: RainDrop for every stream of falling characters and DigitalRain to manage the overall animation. The program adds a twist by using beeps to play the Super Mario Bros. theme song. It runs so smoothly, updating the screen some 30 times per second, and displaying beautifully colored characters descending with background music. The project marries coding skill with an incredible visual and audio experience.
 
 ## About Project
 
