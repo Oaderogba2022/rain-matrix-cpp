@@ -2,7 +2,9 @@
 
 ## Overview  
 
-The **Digital Rain** algorithm is designed to simulate falling symbols in a cascading effect while synchronizing with the **Super Mario Bros. theme song**. It achieves this using **multi-threading**, **randomized raindrop generation**, and **frame-based animation**. The algorithm ensures that the rain effect appears smooth, dynamic, and responsive to the music playing in the background.  
+The **Digital Rain** algorithm is designed to simulate falling symbols in a cascading effect while synchronizing with the **Super Mario Bros. theme song**. It achieves this using **multi-threading**, **randomized raindrop generation**, and **frame-based animation**. The algorithm ensures that the rain effect appears smooth, dynamic, and responsive to the music playing in the background.
+
+Digital Rain algorithm is intended to simulate cascading falling symbols and synchronize itself with the music of **Super Mario Bros**. It achieves this with **multi-threading**, **random creation of raindrops**, and **animation based on the frame**. The algorithm creates a smooth, dynamic, and background music-responsive look for the rain effect.
 
 ## Step-by-Step Breakdown  
 
@@ -40,20 +42,18 @@ At the start of the program, the following steps are performed:
 
 ### 3. Animation Loop  
 
-The main animation loop continuously updates the positions of the raindrops to create the falling effect. Each iteration of the loop follows these steps:  
+The main animation loop continues to update the raindrop locations in order to accomplish the falling action. Every time through the loop does the following:
 
-1. **Clear Previous Frame:**  
-   - The console buffer is cleared before drawing the new frame to prevent overlapping characters.  
+1. **Clear Previous Frame:**
+- The console buffer is cleared before the new frame is drawn to prevent character overlap.
 
-2. **Update Raindrop Positions:**  
-   - Each active raindrop is moved **downward by one row** based on its speed.  
-   - The **leading character** is drawn in a brighter color, while the trailing characters fade as they descend.  
+2. **Update Raindrop Positions:**
+- Each raindrop that is in motion is displaced **one row down** based on its velocity.
+- The **front character** is drawn in a light color, and the back characters are made smaller as they drop.
 
-3. **Remove Off-Screen Raindrops:**  
-   - Once a raindrop moves beyond the bottom of the console, it is removed from memory to prevent excessive resource usage.  
+3. **Take Off-Screen Raindrops:**
 
-4. **Control Frame Rate:**  
-   - The program regulates frame rate using `std::chrono::steady_clock`, ensuring that updates occur consistently at **30 frames per second**.  
+- Once a raindrop has passed the console bottom, it is deleted from memory to prevent excessive use of resources. 4. **Control Frame Rate:** - The program manages frame rate using `std::chrono::steady_clock` so that updating occurs at a constant **30 frames per second**.
 
 ---
 
@@ -81,13 +81,13 @@ The main animation loop continuously updates the positions of the raindrops to c
 
 ## Algorithm Complexity  
 
-- **Raindrop Updates:** O(n) per frame, where **n** is the number of active raindrops.  
-- **Rendering:** O(n) per frame, as each raindrop must be drawn to the screen.  
-- **Music Playback:** O(1), as the audio runs in a separate thread and does not affect animation performance.  
-- **Overall Performance:** The program maintains a stable **30 FPS**, even with a high number of raindrops, ensuring smooth execution.  
+- **Raindrop Updates:** O(n) per frame, where **n** is the number of active raindrops.
+- **Rendering:** O(n) frame by frame, as each raindrop needs to be rendered on the screen.
+- **Music Playback:** O(1), as music is played in a different thread and does not affect animation performance.
+- **Overall Performance:** The application maintains a steady **30 FPS**, even in the midst of heavy raindrops, for optimal performance. 
 
 ---
 
 ## Conclusion  
 
-The **Digital Rain** algorithm effectively combines **procedural animation, multi-threading, and music synchronization** to create a visually and audibly immersive experience. The use of **prime-number-based timing** enhances realism, while **multi-threading ensures seamless execution** without lag or delays. The final result is a dynamic and engaging program that brings a **unique fusion of music and animation** to the console.  
+The **Digital Rain** program is a successful blend of **procedural animation, multi-threading, and music synchronization** that creates a thought-provoking visual and audio experience. **Prime-number-based timing** provides realism, and **multi-threading ensures seamless execution** without pauses or delays. The final product is an interactive and dynamic program that offers a **new synthesis of music and animation** to the console.
