@@ -63,3 +63,17 @@ The DigitalRain::Update() function controls raindrop spawning through a prime nu
 
 static const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 };: Establishes an array consisting of prime numbers for timing duration calculations, the check verifies if elapsedMs exceeds the current prime number value multiplied by 5 milliseconds.
 The program executes SpawnRainDrop() to generate a new raindrop with random characteristics, primeIndex_ = (primeIndex_ + 1) % 8;: Cycles to the next prime, wrapping around after 19 and the lastSpawnTime_ = currentTime then resets the spawn timer.
+
+**Algorithm 5: Background Audio Playback**
+
+The background audio in PlayMarioTheme() plays a looped Super Mario theme while displaying piano keys to generate an immersive effect. The non-blocking playback happens through the use of PlaySound in a thread.
+
+<img src="docs/assets/images/codesnippet5.png" width="400" height="133">
+
+BOOL success = PlaySound(): The success code from PlaySound execution is stored in BOOL success but is not utilised within the code.
+TEXT("C:\\Users\\G00401971@atu.ie\\Downloads\\SuperMario.wav"): Hardcoded audio file path.
+The program executes the command with NULL module assignment when loading from file resources.
+SND_FILENAME: Specifies a file path.
+SND_ASYNC: Plays asynchronously.
+SND_LOOP: Loops the sound.
+The project adds audio richness through this implementation but must have a flexible sound path.
