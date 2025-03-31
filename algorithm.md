@@ -22,7 +22,7 @@ IMAGE
 **Algorithm 2: Raindrop Movement**
 In RainDrop::Update(), the raindrop action is calculated by gradually updating the raindrop's y position, using the raindrop's speed. This is a basic linear update that allows for consistent animation over frames. Below is the important code combined with discussion:
 
-<img src="docs/assets/images/codesnippet1.png" width="400" height="300">
+<img src="docs/assets/images/codesnippet1.png" width="400" height="50">
 
 yPos_  = speed_;: The raindrop’s y-position is increased by its speed_ (given a random value between 1-3 in SpawnRainDrop()). This translates the raindrop each frame downwards.
 
