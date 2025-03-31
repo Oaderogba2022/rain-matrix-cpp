@@ -59,7 +59,7 @@ Outputs a single wide character to the console at the set position.
 
 The DigitalRain::Update() function controls raindrop spawning through a prime number sequence to generate irregular yet patterned appearance timing. Spawning intervals exist in equilibrium with the distribution of visual elements.
 
-<img src="docs/assets/images/codesnippet4.png" width="400" height="133">
+<img src="docs/assets/images/codesnippet4.png" width="200" height="133">
 
 static const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 };: Establishes an array consisting of prime numbers for timing duration calculations, the check verifies if elapsedMs exceeds the current prime number value multiplied by 5 milliseconds.
 The program executes SpawnRainDrop() to generate a new raindrop with random characteristics, primeIndex_ = (primeIndex_ + 1) % 8;: Cycles to the next prime, wrapping around after 19 and the lastSpawnTime_ = currentTime then resets the spawn timer.
@@ -68,7 +68,7 @@ The program executes SpawnRainDrop() to generate a new raindrop with random char
 
 The background audio in PlayMarioTheme() plays a looped Super Mario theme while displaying piano keys to generate an immersive effect. The non-blocking playback happens through the use of PlaySound in a thread.
 
-<img src="docs/assets/images/codesnippet5.png" width="300" height="100">
+<img src="docs/assets/images/codesnippet5.png" width="400" height="100">
 
 BOOL success = PlaySound(): The success code from PlaySound execution is stored in BOOL success but is not utilised within the code.
 TEXT("C:\\SuperMario.wav"): Hardcoded audio file path.
