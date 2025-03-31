@@ -6,88 +6,24 @@ The **Digital Rain** algorithm is designed to simulate falling symbols in a casc
 
 Digital Rain algorithm is intended to simulate cascading falling symbols and synchronize itself with the music of **Super Mario Bros**. It achieves this with **multi-threading**, **random creation of raindrops**, and **animation based on the frame**. The algorithm creates a smooth, dynamic, and background music-responsive look for the rain effect.
 
-## Step-by-Step Breakdown  
+**Algorithm 1: Random Character Generation**
+My RainDrop's constructor utilises a random character generation algorithm to produce an individual stream of random characters for each raindrop, made up of a combination of digits (0-9) and blocks (█) for a Matrix-like digital rain illusion. The random number algorithm utilizes the state-of-the-art Mersenne Twister generator to produce high-quality random numbers in the method, generating rich random pattern streams in a semi-random and continuous fashion. Here is a code snippet that highlights the main aspects discussed and I will review this in further detail below
 
-### 1. Initialization  
+IMAGE
 
-At the start of the program, the following steps are performed:  
+- : xPos_(x), yPos_(-length), speed_(speed), length_(length): This sets the raindrop's initial position, speed, and length by initializing member variables via an initializer list.std::random_device rd;: This line is seeding the random generator with a non-deterministic value that is provided by hardware.
 
-1. **Console Configuration:**  
-   The Windows console is set up to use **buffered output** to prevent flickering. The console size is adjusted to fit the animation, and the cursor is hidden to enhance visual clarity.  
+- std::mt19937 gen(rd());: This creates the Mersenne Twister engine, seeded by rd, for usage when selecting random values.std::uniform_int_distribution<> binaryDis(0, 1);: This creates a binary distribution for a value of either 0 or 1 to use for selecting between digits or blocks.
 
-2. **Random Seed Setup:**  
-   A random seed is initialized using the system clock to ensure that raindrop positions and speeds vary each time the program runs.  
+- std::uniform_int_distribution<> digitDis(0, 9);: This creates a distribution for a digit between 0-9.characters_.resize(length);: This allocates space for the characters_ vector for length wide characters.
 
-3. **Multi-Threading Initialization:**  
-   - The **first thread** is dedicated to running the animation loop, continuously updating the screen with falling symbols.  
-   - The **second thread** is responsible for playing the **Super Mario Bros. theme song** using `PlaySound()`, ensuring that music plays in the background without affecting animation speed.  
+- for (int i = 0; i < length;   i): This creates a loop for all the available positions in the raindrop.characters_[i] = binaryDis(gen) ? L'0'   digitDis(gen) : L'█';: This is a ternary operator: if I get a 1 from binaryDis(gen) it will add the random digit (L'0'   digitDis(gen) would convert the number 0-9 to '0'-'9'), if not selected it would use the block character L'█'.
 
----
+**Algorithm 2: Raindrop Movement**
+In RainDrop::Update(), the raindrop action is calculated by gradually updating the raindrop's y position, using the raindrop's speed. This is a basic linear update that allows for consistent animation over frames. Below is the important code combined with discussion:
 
-### 2. Raindrop Generation  
+IMAGE 
 
-1. **Spawn New Raindrops:**  
-   - Every few frames, new raindrops are randomly generated across the screen.  
-   - Each raindrop is assigned:  
-     - A random **starting position (x-coordinate)**.  
-     - A random **length**, defining how many characters trail behind.  
-     - A random **falling speed**, determining how frequently it updates its position.  
-     - A random **color** to add visual diversity.  
+yPos_  = speed_;: The raindrop’s y-position is increased by its speed_ (given a random value between 1-3 in SpawnRainDrop()). This translates the raindrop each frame downwards.
 
-2. **Prime-Number-Based Timing:**  
-   - The raindrop spawning intervals are determined using **prime numbers**.  
-   - This ensures that new drops appear at irregular but structured intervals, creating a **natural rhythm** that complements the music.  
 
----
-
-### 3. Animation Loop  
-
-The main animation loop continues to update the raindrop locations in order to accomplish the falling action. Every time through the loop does the following:
-
-1. **Clear Previous Frame:**
-- The console buffer is cleared before the new frame is drawn to prevent character overlap.
-
-2. **Update Raindrop Positions:**
-- Each raindrop that is in motion is displaced **one row down** based on its velocity.
-- The **front character** is drawn in a light color, and the back characters are made smaller as they drop.
-
-3. **Take Off-Screen Raindrops:**
-
-- Once a raindrop has passed the console bottom, it is deleted from memory to prevent excessive use of resources. 4. **Control Frame Rate:** - The program manages frame rate using `std::chrono::steady_clock` so that updating occurs at a constant **30 frames per second**.
-
----
-
-### 4. Music Synchronization  
-
-1. **Super Mario Bros. Theme Playback:**  
-   - A separate thread plays the **Super Mario Bros. theme song** in the background using `PlaySound()`.  
-   - This allows the animation and the music to run **independently** without interfering with each other.  
-
-2. **Raindrop Timing & Music Synchronization:**  
-   - Since raindrops are spawned at prime-number intervals, their appearance naturally aligns with the tempo of the music.  
-   - This creates the illusion that **the raindrops are playing the notes of the song** as they fall, adding an interactive musical effect.  
-
----
-
-### 5. Program Termination  
-
-1. **User Input Handling:**  
-   - The program continuously checks for user input (e.g., pressing a key) to allow for manual termination.  
-
-2. **Clean-Up:**  
-   - When the program exits, it resets the console settings, ensuring that the cursor reappears and the buffer is cleared.  
-
----
-
-## Algorithm Complexity  
-
-- **Raindrop Updates:** O(n) per frame, where **n** is the number of active raindrops.
-- **Rendering:** O(n) frame by frame, as each raindrop needs to be rendered on the screen.
-- **Music Playback:** O(1), as music is played in a different thread and does not affect animation performance.
-- **Overall Performance:** The application maintains a steady **30 FPS**, even in the midst of heavy raindrops, for optimal performance. 
-
----
-
-## Conclusion  
-
-The **Digital Rain** program is a successful blend of **procedural animation, multi-threading, and music synchronization** that creates a thought-provoking visual and audio experience. **Prime-number-based timing** provides realism, and **multi-threading ensures seamless execution** without pauses or delays. The final product is an interactive and dynamic program that offers a **new synthesis of music and animation** to the console.
