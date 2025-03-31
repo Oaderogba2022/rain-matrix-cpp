@@ -59,7 +59,7 @@ Outputs a single wide character to the console at the set position.
 
 The DigitalRain::Update() function controls raindrop spawning through a prime number sequence to generate irregular yet patterned appearance timing. Spawning intervals exist in equilibrium with the distribution of visual elements.
 
-<img src="docs/assets/images/codesnippet1.png" width="600" height="200">
+<img src="docs/assets/images/codesnippet4.png" width="600" height="200">
 
 static const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 };: Establishes an array consisting of prime numbers for timing duration calculations
 
