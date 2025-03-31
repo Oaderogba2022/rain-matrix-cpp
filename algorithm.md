@@ -61,11 +61,5 @@ The DigitalRain::Update() function controls raindrop spawning through a prime nu
 
 <img src="docs/assets/images/codesnippet4.png" width="400" height="133">
 
-static const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 };: Establishes an array consisting of prime numbers for timing duration calculations
-
-The check verifies if elapsedMs exceeds the current prime number value multiplied by 5 milliseconds.
-
-The program executes SpawnRainDrop(); to generate a new raindrop with random characteristics.
-
-primeIndex_ = (primeIndex_ + 1) % 8;: Cycles to the next prime, wrapping around after 19.
-lastSpawnTime_ = currentTime;: Resets the spawn timer.
+static const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 };: Establishes an array consisting of prime numbers for timing duration calculations, the check verifies if elapsedMs exceeds the current prime number value multiplied by 5 milliseconds.
+The program executes SpawnRainDrop() to generate a new raindrop with random characteristics, primeIndex_ = (primeIndex_ + 1) % 8;: Cycles to the next prime, wrapping around after 19 and the lastSpawnTime_ = currentTime then resets the spawn timer.
