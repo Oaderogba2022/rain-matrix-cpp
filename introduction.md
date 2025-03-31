@@ -2,6 +2,7 @@
 
 The inspiration for this project is the rhythm games like Piano Tiles and falling keys piano tutorial playthroughs, in which keys or notes fall in a sequential manner. The games provide an entertaining way of learning musical timing and coordination, as well as a visually engaging experience.
 
+<img src="docs/assets/images/raindropimg3.png" width="400" height="300">
 <img src="docs/assets/images/sampledrop.png" width="400" height="300">
 <img src="docs/assets/images/sampledrop2.jpg" width="400" height="300">
 <img src="docs/assets/images/sampledrops3.jpg" width="400" height="300">
