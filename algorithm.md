@@ -20,7 +20,7 @@ IMAGE
 - for (int i = 0; i < length;   i): This creates a loop for all the available positions in the raindrop.characters_[i] = binaryDis(gen) ? L'0'   digitDis(gen) : L'█';: This is a ternary operator: if I get a 1 from binaryDis(gen) it will add the random digit (L'0'   digitDis(gen) would convert the number 0-9 to '0'-'9'), if not selected it would use the block character L'█'.
 
 **Algorithm 2: Raindrop Movement**
-In RainDrop::Update(), the raindrop action is calculated by gradually updating the raindrop's y position, using the raindrop's speed. This is a basic linear update that allows for consistent animation over frames. Below is the important code combined with discussion:
+In RainDrop::Update(), the raindrop action is calculated by gradually updating the raindrop's y position, using the raindrop's speed. This is a basic linear update that allows for consistent animation over frames.
 
 <img src="docs/assets/images/codesnippet1.png" width="200" height="50">
 
