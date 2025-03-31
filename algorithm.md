@@ -32,7 +32,7 @@ yPos_  = speed_;: The raindrop’s y-position is increased by its speed_ (given 
 
 In the RainDrop::Render() console rendering algorithm, each raindrop is drawn at a given location on the screen, with random colors applied, while also ensuring that the drawn characters stay within bounds. The implementation relies on Windows console functions to allow for accurate positioning and styling. The following relevant code with explanations.
 
-IMAGE
+<img src="docs/assets/images/codesnippet3.png" width="600" height="200">
 
 COORD pos = { static_cast<SHORT>(xPos_), static_cast<SHORT>(yPos_) };
 The program creates a COORD structure called pos that contains converted SHORT values for raindrop starting x and y coordinates.
@@ -59,7 +59,7 @@ Outputs a single wide character to the console at the set position.
 
 The DigitalRain::Update() function controls raindrop spawning through a prime number sequence to generate irregular yet patterned appearance timing. Spawning intervals exist in equilibrium with the distribution of visual elements.
 
-IMAGE
+<img src="docs/assets/images/codesnippet1.png" width="600" height="200">
 
 static const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 };: Establishes an array consisting of prime numbers for timing duration calculations
 
