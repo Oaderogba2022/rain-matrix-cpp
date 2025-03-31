@@ -68,7 +68,7 @@ The program executes SpawnRainDrop() to generate a new raindrop with random char
 
 The background audio in PlayMarioTheme() plays a looped Super Mario theme while displaying piano keys to generate an immersive effect. The non-blocking playback happens through the use of PlaySound in a thread.
 
-<img src="docs/assets/images/codesnippet5.png" width="100" height="33">
+<img src="docs/assets/images/codesnippet5.png" width="300" height="100">
 
 BOOL success = PlaySound(): The success code from PlaySound execution is stored in BOOL success but is not utilised within the code.
 TEXT("C:\\SuperMario.wav"): Hardcoded audio file path.
