@@ -86,3 +86,10 @@ Run() coordinates digital rain operations through its main simulation loop by co
 <img src="docs/assets/images/codesnippet6.png" width="400" height="200">
 
 The program begins with the creation of a standard thread named musicThread(&DigitalRain::PlayMarioTheme) which launches the Super Mario theme music in its own thread using the PlayMarioTheme() function from the DigitalRain class so that the music, while playing, is independent of the animation runtime processes. The code initialises the precise clock using auto lastFrameTime = std::chrono::steady_clock::now() that marks the starting point of when the last frame occurred. Entering into the actions under the while true line code starts an infinite loop that allows for the simulation to continue until a keypress indicates closure. In each loop, the program determines the current time by using auto currentTime = std::chrono::steady_clock::now() and calculates the time elapsed, using auto deltaTime = std::chrono::duration_cast(currentTime - lastFrameTime).count() using the elapsed difference conversion. To maintain CPU power usage, the command Sleep(1) causes a delay of 1 millisecond during execution. The music thread continues executing with the command musicThread.detach() and to generate the correct text color in the new rendered frame, the command SetConsoleTextAttribute(hConsole_, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE) restores the text colors to white, while the command system("cls") clears the screen.
+
+
+**Algorithm 6: Randomized Raindrop Creation**
+
+<img src="docs/assets/images/codesnippet7.png" width="400" height="200">
+
+In SpawnRainDrop(), this algorithm that randomly creates raindrops leads to new raindrops having different attributes for horizontal position, speed, and length, creating more variety in the digital rain process. It implements the Mersenne Twister random number generator and utilizes uniform distributions to sample all of these properties, and each newly created raindrop gets added directly to the simulation's collection.
