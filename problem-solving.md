@@ -1,38 +1,47 @@
-# Problem Solving
+### Problem Solving
 
-While creating the Digital Rain effect, I had encountered several issues that required creative problem solving and debugging. The most significant issues I've faced in implementing them, along with their solutions, are mentioned below.
+While working on my project I faced various obstacles while generating Digital Rain which needed problem-solving and thorough debugging to develop a precise simulation that captivates users. I will describe major development challenges while providing solutions I used to solve these issues so my project reached its visual and auditory targets.
 
-## Raindrop Spawning & Movement
-The primary objective of the raindrop simulation was to ensure that the drops spawned at uneven time intervals and shifted smoothly across the screen. In the beginning, the raindrops were not being rendered correctly and were lost along the way before they could descend down the screen.
+### Raindrop Spawning & Movement
+My objective during development was to make raindrops appear randomly while sliding effortlessly toward the ground though I faced problems where they either disappeared prematurely or failed to display correctly. The main problem originated from forced random drop spawning because it made rainfall cluster incorrectly and disappear during movement thus breaking the expected smooth Matrix-inspired effect.
 
-## Solution ##
-To address this, I implemented a prime-number-based interval for spawning. Besides adding variation in the raindrop timing, this approach also caused the raindrops to spawn randomly at any interval, making it feel more natural. I also improved the movement logic by causing the drops to fall at a greater speed, making them always visible and moving smoothly on the screen.
+The original issue stemmed from using simple Sleep(100) time delays which resulted in both too frequent or too infrequent raindrop spawning leading to disordered visual effects. The update process felt flawed because using yPos_ += 1 initially led to movement problems when the rendering rate differed from the drop speeds causing the effect to break.
 
-## Background Music Playback Issues
-The second major issue was with the background music, specifically when trying to sync the raindrops falling to the Super Mario theme song. I originally tried using the beep.h function to create the tones for each note in the song. When writing down the notes and frequencies for each note, though, I was running into issues where some of the notes weren't playing correctly.
+## Solution: 
+DigitalRain::Update() received prime numbers through a static constant array primes[] = { 2, 3, 5, 7, 11, 13, 17, 19 } to develop a prime-index-based spawning mechanism. The code implemented if (elapsedMs >= primes[primeIndex_] * 5) { SpawnRainDrop(); primeIndex_ = (primeIndex_ + 1) % 8; }. Natural randomness was added through the system which generated different time intervals (10ms, 15ms and so on) during Updates. The RainDrop object now updates yPos_ by speed_ while Run() maintains a frame rate of 33ms. Therefore updates happen at a rate of 1-3 in the SpawnRainDrop method. The modification of code produced visible and continuous movement for raindrops throughout the display screen.
 
-## Problem ##
-When attempting to assign a particular frequency to every note, some of the notes did not generate the right sound output, and a broken or distorted melody was produced. The song was also not played smoothly as there were sudden changes in frequency, and some of the notes were skipped.
+### Background Music Playback Issues
+My initial try with beep.h to play Super Mario music failed badly resulting in a jumbled disordered melody that competed negatively with the visual elements. The audio track failed to perform as expected which diminished the intended experiance I had planned for the viewer.
 
-## Solution ##
-After some tries using the beep.h function, I realized that the note frequency resolution was not sensitive enough to provide the precision in timings needed by the melody. Some of the notes were missing because the timing precision was lacking, and the frequencies were not precise as they needed to be.
+The first attempt involved including <beep.h> while writing Beep(261, 200); Beep(293, 200); to produce the Mario theme notes (C4, D4). The frequencies generated through my program experienced playback errors at specific values (e.g. 523 Hz for C5) because of hardware limitations and inaccurate rounding improvements. Furthermore, the Beep blocking nature disrupted the timing during playback resulting in incorrect sequences of notes with harsh bursts thus damaging my song.
 
-To overcome this, I moved to the PlaySound function of the Windows API, which allowed me to load and play the entire song as a WAV file in an asynchronous mode. It plays the music continuously in the background and synchronized nicely with the raindrop simulation. Now, instead of trying to encode the notes manually, the sound file provided me with a seamless audio experience.
+## Solution: 
+I resolved the beep.h challenge by implementing the Windows API’s PlaySound function within PlayMarioTheme() using the following parameters: BOOL success = PlaySound(TEXT("C:\\Users\\G00401971@atu.ie\\Downloads\\SuperMario.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP). I used SND_LOOP together with SND_ASYNC to play my WAV file asynchronously and keep the loop ongoing while avoiding manual note programming. Through this approach the project generated a clear unbroken soundtrack which perfectly synchronized with the rain effects to enhance the project significantly.
 
-## Raindrop Deletion & Performance Improvement
-The initial issue that I was experiencing issues with was the performance of the program, especially when there were more raindrops being shown. At times, the screen would flicker or lag, especially when numerous raindrops were being displayed at the same time on the screen. The issue was compounded by inefficient use of memory because raindrops already out of the screen were not being removed in a timely manner.
+### Raindrop Deletion & Performance Improvement
 
-## Solution ##
-To work around this, I included an efficient raindrop removal system using std::remove_if() to rapidly eliminate drops that had moved off-screen. By removing unnecessary raindrops before the next update, I reduced memory usage and improved the performance in general to make the program run smoother even with a high number of drops on screen.
+Performance began to decrease during the simulation when I increased raindrop counts and the screen displayed flickering together with slow loading times especially at heavy workload conditions. The issue intensified because I was not clearing screen-dropped raindrops effectively which therefore caused waste of memory along with processing power.
 
-## Console Window Size & Resolution
-The second issue that I faced in development was console window size. The console window was fixed in a default size that was too small to accommodate the raindrops well, and the output text would overflow or get truncated.
+In the beginning I did not implement drop removal resulting in drop_.size() growth from SpawnRainDrop(). During rendering of drops outside the display area (yPos_ > height_) the system ran slowly because system("cls") failed to maintain screen refresh. The console drew everything from scratch at once which resulted in more leniency in the slowdown.
 
-## Solution ##
-I corrected this by adjusting the console buffer and window size programmatically with the InitializeConsole() function. This made the screen resize dynamically based on the needs of the program so that all the raindrops could be seen and the screen was not cluttered.
+## Solution: 
+DigitalRain::Update() received a new drops_.erase operation to clean off-screen raindrops by using std_.remove_if(). The Lambda function with IsOffScreen(height_) determined which drops to remove before drops_.end(). The lambda function with std::remove_if function detected drops that IsOffScreen(height_) marked for elimination (yPos_ >= height_) before the drops_.erase operation removed them. such memory-management updates and rendering operations became more efficient through streamlined operations before each update which stabilized performance while also eradicating flicker effects despite abundant raindrops.
 
-## Synchronization Between Raindrops & Music
-One of the main objectives was to synchronize the raindrops with the background music in such a way that they were natural and interesting. At first, however, music and raindrops were not synchronized well enough, and the raindrops falling seemed completely unrelated to the melody.
+### Console Window Size & Resolution
+The default console window dimensions restricted the display of raindrops so that they were either hidden or shown in cramped fashion thereby affecting the intended effect. The simulation would either fall short by stopping in the middle or display an overflow because of the fixed dimensions.
 
-## Solution ##
-In order to do so, I utilized the interval system based on prime numbers to generate the raindrops randomly at time intervals that coordinated with the beat of the background music. This served to provide a more realistic pattern, wherein the raindrops were dropping in a rhythm synchronizing with the underlying melody, further enhancing the illusion that the raindrops were notes being played on the piano.
+From the beginning my application operated under console defaults of 80x25 while expanding dimensions in DigitalRain::DigitalRain(int width, int height) resulted in trucation of all raindrops which touched either 79 for xPos_ or 25 for yPos_ + length_. Text wrapping together with the disappearance of words would make the Matrix appear compressed and unprofessional until users resized the display area.
+
+## Solution:
+The resolution to this problem appeared during InitializeConsole() implementation through two API functions: SetConsoleScreenBufferSize(hConsole_, { static_cast<SHORT>(width_), static_cast<SHORT>(height_) }) which sets the buffer size and SetConsoleWindowInfo(hConsole_, TRUE, &windowSize) which configures the window size to { 0, 0, static_cast<SHORT>(width_ - 1), static_cast<SHORT>(height_ - 1) }. The program expanded the buffer's window dimensions to my desired width_ and height_ dimensions so all raindrops could appear without distortion and the simulation could demonstrate its full potential.
+
+### Synchronization Between Raindrops & Music
+
+I set out to align raindrops with the Mario theme for a unified effect, but at first, the drops fell haphazardly, out of step with the music’s rhythm, disrupting the audio-visual harmony I aimed for.
+
+Detailed Problem: Before tweaking spawning, I likely used a flat timer like if (elapsedMs > 100) { SpawnRainDrop(); }, spawning drops at steady intervals unrelated to the music’s 120 BPM beat. This made the simulation feel random and detached—raindrops didn’t match the melody’s lively pulse, missing the “rain as notes” synergy I envisioned.
+
+## Solution: 
+I fixed this by linking spawning to prime intervals in Update(): if (elapsedMs >= primes[primeIndex_] * 5) { SpawnRainDrop(); primeIndex_ = (primeIndex_ + 1) % 8; }. The primes (2, 3, 5, etc.) gave a varied yet rhythmic spawn pattern (e.g., 10ms, 15ms), tuned to roughly echo the music’s tempo. This made raindrops seem to “dance” with the tune, creating a subtle, note-like rhythm that tied the visuals and audio together beautifully.
+
+
