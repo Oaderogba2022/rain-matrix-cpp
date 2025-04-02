@@ -15,9 +15,9 @@ My initial try with beep.h to play Super Mario music failed badly resulting in a
 
 <img src="docs/assets/images/image.png" width="500" height="200">
 
-<img src="docs/assets/images/image (1).png" width="500" height="200">
+<img src="docs/assets/images/image (1).png" width="500" height="400">
 
-<img src="docs/assets/images/image (2).png" width="500" height="200">
+<img src="docs/assets/images/image (2).png" width="500" height="400">
 
 <img src="docs/assets/images/Screenshot 2025-04-02 153049.png" width="400" height="150">
 
