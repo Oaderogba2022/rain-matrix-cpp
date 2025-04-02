@@ -28,6 +28,13 @@ Digital Rain is a C++ console program that simulates the famous "Matrix" code ra
 
 ## Project Images:
 
+
+<video width="320" height="240" controls loop muted autoplay>
+    <source src="docs/assets/images/Rain drops.mp4" type="video/mp4">
+  
+</video>
+
+
 # Image 1:
 <img src="docs/assets/images/raindropimg.png" width="400" height="300">
 
