@@ -13,6 +13,14 @@ DigitalRain::Update() received prime numbers through a static constant array pri
 ## Background Music Playback Issues
 My initial try with beep.h to play Super Mario music failed badly resulting in a jumbled disordered melody that competed negatively with the visual element of the rain drops. The audio track failed to perform as expected which diminished the intended experiance I had planned.
 
+<img src="docs/assets/images/image.png" width="400" height="150">
+
+<img src="docs/assets/images/image (1).png" width="400" height="150">
+
+<img src="docs/assets/images/image (2).png" width="400" height="150">
+
+<img src="docs/assets/images/Screenshot 2025-04-02 153049.png" width="400" height="150">
+
 The first attempt involved including <beep.h> while writing Beep(261, 200) Beep(293, 200) to produce the Mario theme notes (C4, D4, ...). The frequencies generated through my program experienced playback glitches at specific values (e.g. 523 Hz for C5) because of potential memory issues and inaccurate rounding. Furthermore, the Beep blocking nature disrupted the timing during playback resulting in incorrect sequences of notes with harsh bursts damaging the selected song and presented a issue for me.
 
 ### Solution: 
