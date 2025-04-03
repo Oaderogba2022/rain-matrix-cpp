@@ -47,12 +47,16 @@ Digital Rain is a C++ console program that simulates the famous "Matrix" code ra
 
 [1] Microsoft, "Windows Console API," [Online]. Available: https://docs.microsoft.com/en-us/windows/console/. [Accessed: Mar. 2, 2025].
 
-[2] C++ Reference, "std::chrono - C++ Standard Library," [Online]. Available: https://en.cppreference.com/w/cpp/chrono. [Accessed: Mar. 5, 2025].
+[2] ChatGPT (GPT-4). Open AI. Accessed March 13, 2025[Online] Available:https://chatgpt.com/ . [Accessed: Mar. 1, 2025].
 
-[3] C++ Reference, "std::random_device and std::mt19937," [Online]. Available: https://en.cppreference.com/w/cpp/numeric/random. [Accessed: Mar. 12, 2025].
+[3] C++ Reference, "std::chrono - C++ Standard Library," [Online]. Available: https://en.cppreference.com/w/cpp/chrono. [Accessed: Mar. 5, 2025].
 
-[4] Microsoft, "SetConsoleCursorPosition function (consoleapi.h)," [Online]. Available: https://learn.microsoft.com/en-us/windows/console/setconsolecursorposition. [Accessed: Mar. 15, 2025].
+[4] C++ Reference, "std::random_device and std::mt19937," [Online]. Available: https://en.cppreference.com/w/cpp/numeric/random. [Accessed: Mar. 12, 2025].
 
-[5] C++ Reference, "std::chrono::steady_clock - C++ Standard Library," [Online]. Available: https://en.cppreference.com/w/cpp/chrono/steady_clock. [Accessed: Mar. 16, 2025].
+[5] Microsoft, "SetConsoleCursorPosition function (consoleapi.h)," [Online]. Available: https://learn.microsoft.com/en-us/windows/console/setconsolecursorposition. [Accessed: Mar. 15, 2025].
 
-[6] A. Nash, "Generating random numbers using Mersenne Twister," LearnCpp, [Online]. Available: https://www.learncpp.com/cpp-tutorial/generating-random-numbers-using-mersenne-twister/. [Accessed: Mar. 16, 2025].
+[6] C++ Reference, "std::chrono::steady_clock - C++ Standard Library," [Online]. Available: https://en.cppreference.com/w/cpp/chrono/steady_clock. [Accessed: Mar. 16, 2025].
+
+[7] A. Nash, "Generating random numbers using Mersenne Twister," LearnCpp, [Online]. Available: https://www.learncpp.com/cpp-tutorial/generating-random-numbers-using-mersenne-twister/. [Accessed: Mar. 16, 2025].
+
+[8] ChatGPT (GPT-4). Open AI. Accessed March 13, 2025[Online] Available:https://chatgpt.com/ . [Accessed: Mar. 16, 2025].
