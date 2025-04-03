@@ -30,7 +30,7 @@ Digital Rain is a C++ console program that simulates the famous "Matrix" code ra
 
 - RainDrop & DigitalRain Classes – Manage cascading characters dynamically.
 - Smooth Animation – Refreshes the screen 30 times per second.
-- Vivid Visuals – Brightly colored characters descend in a mesmerizing pattern.
+- Vivid Visuals – Brightly colored characters descend in a mesmerising pattern.
 
  Click on the different sections for more details!
 
