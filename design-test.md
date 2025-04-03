@@ -1,18 +1,15 @@
 # Design and Test
 
-The Digital Rain project existed as a C++ console-based animation which reproduced Matrix digital rain effects through synchronised music while triggering random symbols for an effect that simulated musical notes from the Super Mario Bros. theme. The main objective during development was to build an animated simulation that used console resources to achieve performance excellence while creating visual appeal through interactive features.
+The Digital Rain project is functioned as a C console based animation that simulates Matrix digital rain effects to music while randomly producing symbols for rain as a visual from the Super Mario Bros. theme. The primary focus throughout the development was to create an animated simulation utilizing console resource even with achieving great performance while employing interactive animations with highly visual impact.
 
 ### Key Features
 The following features marked my project design for achieving an immersive experience:
 
-- A Dynamic Falling Effect presented numbers and symbols such as L'█' in descending motion at unique speeds to deliver like rain. Random generation combined with smooth animation updates was essential to maintain its mesmerising effect in the program.
+- A Dynamic Falling Effect that displayed numbers/symbols, such as L'█' moving in descent at various speeds. The amounts of rain were just right and design randomization together with smooth frame updates for animation was key to maintaining its spell-binding characteristic to the viewer as it rendered to program.
+  
+- The Super Mario Bros soundtrack was synchronised with the rain drops through some loose music timing a combination that hinted that the raindrops produced notes from the June of this theme song. I produced two threads of execution of the application to separate the animation functions from the audio functions, in turn achieving visual performance that was unencumbered.
 
-- The Super Mario Bros. soundtrack synchronised with the rainfall drops through loose musical timing that made the raindrops appear to play notes from the theme.
-I implemented two execution threads for the application to distribute animation responsibilities separately from audio processing tasks thus obtaining uninterrupted visual performance.
-
-- I implemented prime numbers such as two three and five as spawn conditions to produce an sequence of drops that eliminated repetitive sequences.
-
-- Each raindrop maintained an individual speed range of 1-3 units per frame and a separate color value from 1-15 that the GenerateRandomColor() method assigned for visual enhancement throughout the rain effect.
+- I implemented prime numbers; 2, 3, and 5 as spawn criteria to create a sequence of drops for prolonged visual effect, while eliminating sequences, and repeating patterns. - Each raindrop had its on height, of 1-3 units per frame.
 
 ## System Components
 
@@ -26,15 +23,15 @@ The GenerateRandomColor() component uses std::uniform_int_distribution<>() with 
 Each character of the array was assigned random values between digits and blocks (0-9 and L'█') through the expression characters_[i] = binaryDis(gen) ? L'0' + digitDis(gen) : L'█'. L'0' + digitDis(gen) : L'█'. The execution algorithm (50/50 via binaryDis(0, 1)) between numbers and symbols maintained a balanced combination of numeric expressions with symbolic elements thus making the visual display more sophisticated.
 
 ### 2. DigitalRain Class
-I structured the DigitalRain class as the simulation’s orchestrator, managing the overall system and integrating all components:
+I designed the DigitalRain class to act as the core controller for the simulation, overseeing all system components and their interactions.
 
-Frame Rate Control (~30 FPS) – I used std::chrono in Run() to enforce a 33ms update cycle (if (deltaTime >= 33)), ensuring smooth animation. This tied Update() and Render() to a consistent ~30 FPS, balancing responsiveness with CPU efficiency.
+**Frame Rate Control (~30 FPS)** – In the Run() method, I utilized std::chrono to maintain a 33ms update cycle with an if condition checking (deltaTime >= 33). This approach helped achieve smooth animations by keeping both Update() and Render() synchronized at approximately 30 frames per second, balancing responsiveness with CPU usage.
 
-Console Buffer Manipulation – In InitialiseConsole(), I called SetConsoleScreenBufferSize(hConsole_, { static_cast<SHORT>(width_), static_cast<SHORT>(height_) }) and SetConsoleWindowInfo to resize the console dynamically. This maximised display space, preventing truncation of raindrops at edges or bottom.
+**Console Buffer Management** – Within InitialiseConsole(), I invoked SetConsoleScreenBufferSize(hConsole_, { static_cast(width_), static_cast(height_) }) along with SetConsoleWindowInfo to dynamically adjust console size. This optimization enhanced display area utilization, ensuring raindrops weren’t clipped at the edges or bottom of the interface.
 
-Multi-Threading Support – I introduced a thread in Run() with std::thread musicThread(&DigitalRain::PlayMarioTheme, this) to handle audio via PlaySound, detaching it to run independently. This kept the main thread focused on visuals, avoiding bottlenecks.
+**Multi-Threading Implementation** – I created a separate thread in Run() using std::thread musicThread(&DigitalRain::PlayMarioTheme, this) for audio processing via PlaySound. By detaching this thread, it runs independently from the main thread focused on visuals, thereby preventing any performance slowdowns.
 
-Memory Management – I implemented drops_.erase(std::remove_if(...)) in Update() to purge off-screen raindrops (yPos_ >= height_), preventing memory bloat and maintaining performance as the simulation ran indefinitely.
+**Memory Management Optimization** – To manage memory efficiently, I employed drops_.erase(std::remove_if(...)) within Update() to remove off-screen raindrops where (yPos_ >= height_). This strategy effectively reduced memory usage and sustained performance during continuous simulation operation.
 
 ## Multi-Threading for Animation & Audio
 The program utilises two running threads that work simultaneously for an integrated multimedia presentation:
