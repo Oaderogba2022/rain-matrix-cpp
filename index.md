@@ -43,7 +43,7 @@ Digital Rain is a C++ console program that simulates the famous "Matrix" code ra
 
 <img src="docs/assets/images/raindropimg3.png" width="400" height="300">
 
-##References
+## References
 
 [1] Microsoft, "Windows Console API," [Online]. Available: https://docs.microsoft.com/en-us/windows/console/. [Accessed: Mar. 2, 2025].
 
