@@ -21,7 +21,7 @@ My Digital Rain program is a C++ program that emulates the Matrix code rain anim
 Digital Rain is a C++ console program that simulates the famous "Matrix" code rain effect. It features:
 
 - RainDrop & DigitalRain Classes – Manage cascading characters dynamically.
-- Smooth Animation – Refreshes the screen ~30 times per second.
+- Smooth Animation – Refreshes the screen 30 times per second.
 - Vivid Visuals – Brightly colored characters descend in a mesmerizing pattern.
 
  Click on the different sections for more details!
@@ -45,6 +45,8 @@ Digital Rain is a C++ console program that simulates the famous "Matrix" code ra
 
 ##References
 
-[1] Microsoft, "Windows Console API," [Online]. Available: https://docs.microsoft.com/en-us/windows/console/. [Accessed: Apr. 10, 2025].
-[2] C++ Reference, "std::chrono - C++ Standard Library," [Online]. Available: https://en.cppreference.com/w/cpp/chrono. [Accessed: Apr. 12, 2025].
-[3] C++ Reference, "std::random_device and std::mt19937," [Online]. Available: https://en.cppreference.com/w/cpp/numeric/random. [Accessed: Apr. 15, 2025].
+[1] Microsoft, "Windows Console API," [Online]. Available: https://docs.microsoft.com/en-us/windows/console/. [Accessed: Mar. 2, 2025].
+
+[2] C++ Reference, "std::chrono - C++ Standard Library," [Online]. Available: https://en.cppreference.com/w/cpp/chrono. [Accessed: Mar. 5, 2025].
+
+[3] C++ Reference, "std::random_device and std::mt19937," [Online]. Available: https://en.cppreference.com/w/cpp/numeric/random. [Accessed: Mar. 12, 2025].
