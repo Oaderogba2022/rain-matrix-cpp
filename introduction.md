@@ -8,8 +8,11 @@ My application is based on C++ and Windows Console API and employs multi-threadi
 Over the course of the rest of my blog, I will discuss the following aspects of the project:
 
 Design & Test: High-level system design, interaction between components and with themselves, and how it is tested.
+
 Algorithm: Explanation of logic utilised to create rain, motion, and randomness.
+
 Problem-Solving: Problems found during implementation and how they were solved. 
-Modern C++ Insight & Reflection: Key C++ features utilized and where the author could have improved.
+
+Modern C++ Insight & Reflection: Key C++ features utilised and where the author could have improved.
 
 
