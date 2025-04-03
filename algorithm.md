@@ -69,12 +69,18 @@ The background audio in PlayMarioTheme() plays a looped Super Mario theme while 
 <img src="docs/assets/images/codesnippet5.png" width="400" height="100">
 
 BOOL success = PlaySound(): The success code from PlaySound execution is stored in BOOL success but is not utilised within the code.
+
 TEXT("C:\\SuperMario.wav"): Hardcoded audio file path.
+
 The program executes the command with NULL module assignment when loading from file resources.
+
 SND_FILENAME: Specifies a file path.
+
 SND_ASYNC: Plays asynchronously.
+
 SND_LOOP: Loops the sound.
-The project adds audio richness through this implementation but must have a flexible sound path.
+
+The project adds audio richness through this implementation but must have a flexible sound path due to WAV files being unable to save in the Resource Files.
 
 **Algorithm 6: Main Simulation Loop with Multithreading**
 
