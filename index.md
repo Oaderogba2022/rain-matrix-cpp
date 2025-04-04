@@ -4,8 +4,6 @@ categories: demo
 ---
 
 
-# Table of Contents
-
 - [Introduction](introduction.md)
 - [Design & Test](design-test.md)
 - [Algorithm](algorithm.md)
