@@ -1,4 +1,4 @@
-# Modern C++  
+# Modern C++ and Reflection
  
 The **Digital Rain** project takes full advantage of **Modern C++ (C++11 and beyond)** to enhance efficiency, readability, and maintainability. Key features utilised include:  
 
@@ -27,3 +27,12 @@ The auto keyword from C++11 provides variable declaration simplification by allo
 
 ### Range-Based For Loops
 I use C++11 range-based for loops for simple container traversal in DigitalRain::Update as well as DigitalRain::Render through the lines for (auto& drop : drops_) { drop.Update(); } and for (auto& drop : drops_) { drop.Render(hConsole_); }. The drops_ container undergoes a clean update and render process through its individual elements with the use of range-based for loops that modern C++ code advocates.
+
+# Reflection
+
+The Digital Rain project was a fun time for me to develop my C++ skills, and I was able to come up with something fun and different in the context of falling blocks. I took the basic idea of raindrops falling in a single column down to the bottom of the screen, to blocks that wider and shaped like blocks of rain. To accomplish this I created a class to track letters and numbers in random character locations in a 2D vector. I created a DigitalRain class to handle all aspects of the program, spawning, dropping down & displaying the blocks. I utilised unique_ptr to avoid memory issues, and also utilised Windows Console API to actually draw everything on the screen.
+
+Using mt19937 and uniform_int_distribution, I programmed the blocks to have different sizes and widths between three to eight characters and heights between four to twelve rows to create variety, I assigned the blocks speeds between 1 and 3, to give them different fall speeds as well. I implemented a frame rate using chrono to time the updates, at 30 fps, by measuring the elapsed seconds between frames. Initially, the rendering looked quite messy, as some of the blocks were overlapping. To get around that, I cleared the screen with an explicit string of spaces each frame, and redrew the entire background. To create a matrix type of effect, I used SetConsoleTextAttribute to set the top of each block bright green, and the other two rows were in ordinary green. As the block sizes are larger, I also reduced the spawn rate for the blocks with rand() % 10, so the screen is not too full. Lastly, I added an exit for the animation using ESC for an easy way to stop the program.
+
+I spent time fixing issues, like blocks starting off screen, by tweaking their starting positions and testing ranges until they fit. I also played with the spawn rate, watching how many blocks worked best. Using modern C++ tools like range based loops made the code cleaner, and chrono helped me control timing better. The project shows good design with two clear classes, creative block generation, and solutions to problems, plus extras like smart pointers. I could add more to this project, like colours inside blocks or faster drawing, but overall I’m proud of the heavy, blocky rain effect I made.
+
